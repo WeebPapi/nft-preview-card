@@ -3,13 +3,15 @@ import './NftCard.css'
 import { images } from '../../constants'
 
 const NftCard = ( {title, desc, price, time, author, img: {hero, logo, clock, avatar}}) => {
+
+    
   return (
     <div className='nftcard'>
         <div className='nftcard__image flex__center'>
+            <img src={hero} />
             <div className='nftcard__image_overlay flex__center'>
                 <img src={images.view} alt="eye" />
             </div>
-            <img src={hero}/>
         </div>
         <div className='nftcard__text'>
             <div className='nftcard__text-heading'>

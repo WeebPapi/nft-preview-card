@@ -19,16 +19,20 @@
 }
 .nftcard__image {
     width: 302px;
+    height: 302px;
+    position: relative;
 }
 .nftcard__image_overlay {
     width: 302px;
-    height: 302px;
+    height: 100%;
     background: rgba(0, 255, 248, 0.53);
     position: absolute;
-    display: none!important;
+    transition: ease-in 0.25s;
+    opacity: 0;
+    border-radius: 10px;
 }
 .nftcard__image_overlay:hover {
-    display: flex;
+    opacity: 1;
 }
 
 .nftcard__image .nftcard__image_overlay img {
@@ -36,9 +40,11 @@
     height: 44px;
 }
 .nftcard__image img {
-    width: 302px;
-    height: 302px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     cursor: pointer;
+    border-radius: 10px;
 }
 .nftcard__text {
     width: 302px;
@@ -49,6 +55,10 @@
     font-weight: 600;
     line-height: 27.72px;
     cursor: pointer;
+    transition: ease-in 0.25s;
+}
+.nftcard__text-heading h1:hover, .nftcard__bottom_data p:hover{
+    color: rgba(0, 255, 248, 1);
 }
 .nftcard__text-heading p {
     font-size: 18px;
@@ -104,7 +114,6 @@
     height: 1px;
     width: 302px;
     background: rgba(46, 64, 90, 1);
-
 }
 .nftcard__bottom_data {
     width: 230px;
@@ -117,10 +126,35 @@
     display: inline;
     color: white;
     cursor: pointer;
+    transition: ease-in 0.25s;
 }
 .nftcard__bottom_data img {
     width: 33px;
     height: 33px;
     border: 1px solid white;
     border-radius: 50%;
+}
+
+@media screen and (max-width: 550px){
+    .nftcard {
+        width: 327px;
+        height: 543px;
+    }
+    .nftcard__image {
+        width: 278px;
+        height: 278px;
+    }
+    .nftcard__image_overlay {
+        width: 278px;
+        height: 100%;
+    }
+    .nftcard__text {
+        width: 278px;
+    }
+    .nftcard__bottom_line {
+        width: 278px;
+    }
+    .nftcard__bottom_data {
+        width: 220px;
+    }
 }
